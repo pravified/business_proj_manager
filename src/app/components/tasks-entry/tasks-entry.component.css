@@ -1,0 +1,19 @@
+#task-form {
+    display: grid;
+    grid-template-columns: 1;
+    width: 25%;
+}
+
+.label-item {
+    text-align: right;
+    padding: 5px;
+}
+
+#button-container {
+    width: 100%;
+}
+
+#button-container button {
+    margin: 5px;
+    width: 25%;
+}

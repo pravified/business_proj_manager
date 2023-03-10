@@ -1,0 +1,48 @@
+#container {
+    height: 100vw;
+}
+
+#task-container {
+    padding: 10px;
+}
+
+.state-stack {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    flex: 1;
+}
+
+.stack-item {
+    flex: 1;
+    margin: 5px;
+    max-height: min-content;
+}
+
+#colTitles {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+}
+
+.colHeader {
+    font-size: x-large;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*
+Sources:
+House, Chris. “A Complete Guide to Grid: CSS-Tricks.” CSS-Tricks, 30 Sept. 2022, https://css-tricks.com/snippets/css/complete-guide-grid/. 
+*/

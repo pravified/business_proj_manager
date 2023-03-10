@@ -1,0 +1,26 @@
+#person-form {
+    display: grid;
+    grid-template-columns: 1;
+}
+
+.label-item {
+    padding: 5px;
+    text-align: right;
+}
+
+#cancel {
+    margin: 10px;
+}
+
+#add {
+    margin: 10px;
+}
+
+#button-container {
+    width: 100%;
+}
+
+#button-container button {
+    margin: 5px;
+    width: 25%;
+}

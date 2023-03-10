@@ -1,0 +1,33 @@
+.header-container{
+    overflow: hidden;
+  background-color: rgb(248, 248, 248);
+  display: inline-flex;
+  align-items: stretch;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+
+#app-title {
+    font-size: xx-large;
+    padding: 10px;
+}
+
+.navMenu {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+a {
+    color:ghostwhite;
+}
+
+.navMenu a {
+    font-size: x-large;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}

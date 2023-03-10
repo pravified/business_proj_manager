@@ -1,0 +1,57 @@
+<div class="form-container">
+    <form (ngSubmit)="savePerson()" *ngIf="person" id="person-form">
+        <!-- Entry of new person data -->
+        <mat-form-field appearance="fill" class="field-item">
+            <mat-label>ID</mat-label>
+            <input matInput type="text" id="personId" name="personId" [(ngModel)]="person.personId"
+            [disabled]="true">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field-item">
+            <mat-label>First Name</mat-label>
+            <input matInput id="fName" name="fName" [(ngModel)]="person.fName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field-item">
+            <mat-label>Last Name</mat-label>
+            <input matInput id="lName" name="lName" [(ngModel)]="person.lName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field-item">
+            <mat-label>Job Title</mat-label>
+            <input matInput id="jobTitle" name="jobTitle" [(ngModel)]="person.jobTitle">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field-item">
+            <mat-label>Phone Number</mat-label>
+            <input matInput id="phoneNum" name="phoneNum" [(ngModel)]="person.phoneNum">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field-item">
+            <mat-label>Address</mat-label>
+            <input matInput id="address" name="address" [(ngModel)]="person.address">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field-item">
+            <mat-label>Email</mat-label>
+            <input matInput id="email" name="email" [(ngModel)]="person.email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field-item">
+            <mat-label>Office Location</mat-label>
+            <input matInput id="officeLocation" name="officeLocation" [(ngModel)]="person.officeLocation">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field-item">
+            <mat-label>Department</mat-label>
+            <input matInput id="department" name="department" [(ngModel)]="person.department">
+        </mat-form-field>
+
+        <div id="button-container">
+            <button button mat-raised-button color="basic" id="cancel" name="cancel" routerLink="/people">Cancel</button>
+            <button mat-raised-button color="primary" id="add" name="add" (click)="savePerson()" routerLink="/people">Add</button>
+        </div>
+    
+    </form>
+    
+    </div>

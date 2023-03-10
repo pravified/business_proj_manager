@@ -1,0 +1,93 @@
+<div id="container">
+<div>
+    <!-- Ability to create new task -->
+    <button mat-raised-button color="primary" [routerLink]="['entry']">Create New Task</button>
+    <br/><br/>
+    <div><router-outlet></router-outlet></div>
+</div>
+<div id="task-container">
+    <div class="row" id="colTitles">
+        <div class="colHeader">To-Do</div>
+        <div class="colHeader">Started</div>
+        <div class="colHeader">Review</div>
+        <div class="colHeader">Complete</div>
+    </div>
+    <mat-divider></mat-divider><br/>
+    <div class="row">
+        <div class="state-stack" id="todo_stack"
+        (dragenter)="dragEnterColumnHandler($event)"
+        (dragover)="dragOverColumnHandler($event)"
+        (drop)="dropToDoColHandler($event)"
+        >
+            <!-- dynamically appearing 'task block' div items -->
+            <mat-card *ngFor="let task of tasks_todo" class="stack-item" [attr.id]="task.id"
+            draggable="true"
+            (dragstart)="dragStartHandler($event)"
+            (dragend)="dragEndHandler($event)"
+            (ondrag)="dragHandler($event)">
+                <mat-card-title>{{task.id}} - {{task.title}}</mat-card-title>
+                <mat-card-content>
+                    <p>Description:&nbsp;{{task.description}}</p>
+                    <p>Assignee:&nbsp;{{task.assignee}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="state-stack" id="started_stack"
+        (dragenter)="dragEnterColumnHandler($event)"
+        (dragover)="dragOverColumnHandler($event)"
+        (drop)="dropStartedColHandler($event)"
+        >
+            <!-- dynamically appearing 'task block' div items -->
+            <mat-card *ngFor="let task of tasks_started" class="stack-item" [attr.id]="task.id"
+            draggable="true"
+            (dragstart)="dragStartHandler($event)"
+            (dragend)="dragEndHandler($event)"
+            (ondrag)="dragHandler($event)">
+                <mat-card-title>{{task.id}} - {{task.title}}</mat-card-title>
+                <mat-card-content>
+                    <p>Description:&nbsp;{{task.description}}</p>
+                    <p>Assignee:&nbsp;{{task.assignee}}</p>
+                </mat-card-content>          
+            </mat-card>
+        </div>
+        <div class="state-stack" id="review_stack"
+        (dragenter)="dragEnterColumnHandler($event)"
+        (dragover)="dragOverColumnHandler($event)"
+        (drop)="dropReviewColHandler($event)"
+        >
+            <!-- dynamically appearing 'task block' div items -->
+            <mat-card *ngFor="let task of tasks_review" class="stack-item" [attr.id]="task.id"
+            draggable="true"
+            (dragstart)="dragStartHandler($event)"
+            (dragend)="dragEndHandler($event)"
+            (ondrag)="dragHandler($event)">
+                <mat-card-title>{{task.id}} - {{task.title}}</mat-card-title>
+                <mat-card-content>
+                    <p>Description:&nbsp;{{task.description}}</p>
+                    <p>Assignee:&nbsp;{{task.assignee}}</p>
+                </mat-card-content>          
+            </mat-card>
+        </div>
+        <div class="state-stack" id="complete_stack"
+        (dragenter)="dragEnterColumnHandler($event)"
+        (dragover)="dragOverColumnHandler($event)"
+        (drop)="dropCompleteColHandler($event)"
+        >
+            <!-- dynamically appearing 'task block' div items -->
+            <mat-card *ngFor="let task of tasks_complete" class="stack-item" [attr.id]="task.id"
+            draggable="true"
+            (dragstart)="dragStartHandler($event)"
+            (dragend)="dragEndHandler($event)"
+            (ondrag)="dragHandler($event)">
+                <mat-card-title>{{task.id}} - {{task.title}}</mat-card-title>
+                <mat-card-content>
+                    <p>Description:&nbsp;{{task.description}}</p>
+                    <p>Assignee:&nbsp;{{task.assignee}}</p>
+                </mat-card-content>           
+            </mat-card>
+        </div>
+    </div>
+</div>
+</div>
+
+

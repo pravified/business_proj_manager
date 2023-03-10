@@ -1,0 +1,51 @@
+<div class="form-container">
+<form (ngSubmit)="saveTask()" *ngIf="task" id="task-form">
+    <!-- Entry of new task data-->
+    <mat-form-field appearance="fill" class="field-item">
+        <mat-label>ID</mat-label>
+        <input matInput id="id" name="id" [(ngModel)]="task.id"
+        [disabled]="true">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field-item">
+        <mat-label>Title</mat-label>
+        <input matInput id="title" name="title" [(ngModel)]="task.title">
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill" class="field-item">
+        <mat-label>Description</mat-label>
+        <input matInput id="desc" name="desc" [(ngModel)]="task.description">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field-item">
+        <mat-label>Start Date</mat-label>
+        <input matInput id="startDt" name="startDt" [(ngModel)]="task.startDt">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field-item">
+        <mat-label>End Date</mat-label>
+        <input matInput id="endDt" name="endDt" [(ngModel)]="task.endDt">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field-item">
+        <mat-label>Assignee</mat-label>
+        <mat-select id="assignee" name="assignee" [(ngModel)]="task.assignee">
+            <mat-option *ngFor="let assignee of assignees" [value]="assignee">
+                {{assignee}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div id="button-container">
+        <button mat-raised-button color="basic" id="cancel" name="cancel" routerLink="/tasks">Cancel</button>
+        <button mat-raised-button color="primary" id="add" name="add" (click)="saveTask()" routerLink="/tasks">Add</button>
+    </div>    
+    
+</form>
+
+</div>
+
+<!-- 
+    Sources:
+    “How to Use NGFOR to Make a Dropdown in Angular from an Array ?” GeeksforGeeks, 12 Mar. 2021, https://www.geeksforgeeks.org/how-to-use-ngfor-to-make-a-dropdown-in-angular-from-an-array/. 
+-->

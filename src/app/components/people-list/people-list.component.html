@@ -1,0 +1,28 @@
+<div id="container">
+    <h3>Project Team Members</h3>
+
+    <div class="container-row">
+        <div class="container-row">
+            <!-- Ability to add new person -->
+            <div id="person-entry" class="col-sm-8">
+                <button mat-raised-button color="primary" [routerLink]="['add']">Add New Person</button>
+                <br/><br/>
+                <router-outlet></router-outlet>
+            </div>
+            <!-- List of people -->
+            <div id="people-list" class="col-sm-4">
+                <mat-card *ngFor="let person of people" class="profile-block"> 
+                    <mat-card-title>{{person.fName}}&nbsp;{{person.lName}}</mat-card-title>
+                    <mat-card-subtitle>{{person.jobTitle}}</mat-card-subtitle>
+                    <mat-card-content>{{person.department}}</mat-card-content>
+                    <mat-card-content>{{person.officeLocation}}</mat-card-content>
+                </mat-card>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+
+  
+  

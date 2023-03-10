@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="container-row">
+        <!-- List of people profiles to drag -->
+        <div id="people-list">
+            <h3>Drag a person into a project box to assign.</h3>
+            <mat-card *ngFor="let person of unassigned" [attr.id]="person.personId"
+            draggable="true"
+            (dragstart)="dragStartHandler($event)"
+            (dragend)="dragEndHandler($event)"
+            (ondrag)="dragHandler($event)"> 
+                <mat-card-title>{{person.fName}}&nbsp;{{person.lName}}</mat-card-title>
+                <mat-card-subtitle>{{person.jobTitle}}</mat-card-subtitle>
+                <mat-card-content>{{person.email}}</mat-card-content>
+            </mat-card>
+        </div>
+
+        <!-- Three project fields to drop in -->
+        <div id="proj-fields">
+            <div class="dropList">
+                <fieldset id="proj01" class="proj-field"
+                (dragenter)="dragEnterProjFieldHandler($event)"
+                (dragover)="dragOverProjHandler($event)"
+                (drop)="dropProj01Handler($event)">
+                    <legend>Software Development</legend>
+                    <div id="proj01List">
+                    </div>
+                </fieldset>
+             </div>
+    
+             <div class="dropList">
+                <fieldset id="proj02" class="proj-field"
+                (dragenter)="dragEnterProjFieldHandler($event)"
+                (dragover)="dragOverProjHandler($event)"
+                (drop)="dropProj02Handler($event)">
+                    <legend>Project Management</legend>
+                    <div id="proj02List">
+                    </div>
+                </fieldset>
+             </div>
+
+             <div class="dropList">
+                <fieldset id="proj03" class="proj-field"
+                (dragenter)="dragEnterProjFieldHandler($event)"
+                (dragover)="dragOverProjHandler($event)"
+                (drop)="dropProj03Handler($event)">
+                    <legend>Infrastructure</legend>
+                    <div id="proj03List">
+                    </div>
+                </fieldset>
+             </div>
+        </div>
+      
+      </div>
+</div>
+
+<!--
+    Source:
+    Verma, Shubham. “HTML 5 Drag &amp; Drop with Angular 4.” Stack Overflow, https://stackoverflow.com/questions/47975237/html-5-drag-drop-with-angular-4. 
+-->
+  
+  

@@ -1,5 +1,28 @@
 # BusinessProjManager
 
+## Overview
+
+This Angular 2 application is an Application Life-Cycle Management Tool.
+The following functionality is included:
+    1. Tracking project tasks
+    2. Entering team member profiles
+    3. Project assignment
+
+## Technologies Used
+
+Angular 2 (TypeScript) framework
+HTML5 Drag-and-drop feature
+HTML5 Local storage
+
+## To Run and Test
+
+Install the required packages:
+    1. Node Modules
+        1.1 Angular Material
+(run command npm install)
+
+Follow below instructions starting from 'Development server.'
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
 ## Development server
